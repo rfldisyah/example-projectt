@@ -4,62 +4,60 @@ namespace App\Http\Controllers;
 
 use App\Models\DiaryAnalysis;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DiaryAnalysisController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $analyses = DiaryAnalysis::whereHas('diary', function ($query) {
+            $query->where('user_id', Auth::id());
+        })
+            ->with('diary')
+            ->latest()
+            ->paginate(15);
+
+        return view('analysis.index', compact('analyses'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        abort(404); // Halaman tidak ditemukan
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        abort(404);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(DiaryAnalysis $diaryAnalysis)
     {
-        //
+        if ($diaryAnalysis->diary->user_id !== Auth::id()) {
+            abort(403, 'Anda tidak memiliki akses ke analisis ini.');
+        }
+
+        return view('analysis.show', compact('diaryAnalysis'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(DiaryAnalysis $diaryAnalysis)
     {
-        //
+        abort(404);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, DiaryAnalysis $diaryAnalysis)
     {
-        //
+        abort(404);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(DiaryAnalysis $diaryAnalysis)
     {
-        //
+
+        if ($diaryAnalysis->diary->user_id !== Auth::id()) {
+            abort(403);
+        }
+
+        $diaryAnalysis->delete();
+
+        return back()->with('success', 'Hasil analisis KA berhasil dihapus.');
     }
 }
