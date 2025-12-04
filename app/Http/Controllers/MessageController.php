@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Massage;
+use App\Models\Message;
 use Illuminate\Http\Request;
 
-class MassageController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class MassageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Massage $massage)
+    public function show(Message $massage)
     {
         //
     }
@@ -42,7 +42,7 @@ class MassageController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Massage $massage)
+    public function edit(Message $massage)
     {
         //
     }
@@ -50,7 +50,7 @@ class MassageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Massage $massage)
+    public function update(Request $request, Message $massage)
     {
         //
     }
@@ -58,7 +58,7 @@ class MassageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Massage $massage)
+    public function destroy(Message $massage)
     {
         //
     }
