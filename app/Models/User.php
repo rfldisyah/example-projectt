@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Symfony\Component\Mime\Message;
 
 class User extends Authenticatable
 {
@@ -45,4 +46,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function messages(){
+        return $this->hasMany(Message::class);
+    }
+    public function testimony(){
+        return $this->hasMany(testimony::class);
+    }
+
 }
