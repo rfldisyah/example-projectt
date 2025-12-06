@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
 use App\Models\Diary;
@@ -58,7 +57,7 @@ class DiaryController extends Controller
         Log::info('Analysis ID: ' . $analysis->id);
         Log::info('Reflection: ' . $analysis->reflection);
         Log::info('Habit: ' . $analysis->habit_insight);
-        
+
         return view('user.diary.create', [
             'diary' => $diary,
             'analysis' => $analysis,
