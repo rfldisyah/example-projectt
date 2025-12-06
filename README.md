@@ -7,9 +7,9 @@
 <div align="center">
 
 [![Hackathon](https://img.shields.io/badge/Hackathon-2025-orange.svg)]()
-[![IMPHNEN](https://img.shields.io/badge/IMPHNEN-blue.svg)]()
-[![KOLOSAL Ai](https://img.shields.io/badge/KOLOSAL_Ai-black.svg)]() 
-[![Duck.SC](https://img.shields.io/badge/Duck.SC-yellow.svg)]()
+[![IMPHNEN](https://img.shields.io/badge/IMPHNEN-2025-blue.svg)]()
+[![KOLOSAL Ai](https://img.shields.io/badge/KOLOSAL-API-black.svg)]() 
+[![Duck.SC](https://img.shields.io/badge/Duck-SC-yellow.svg)]()
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![Platform](https://img.shields.io/badge/platform-web-blue.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
