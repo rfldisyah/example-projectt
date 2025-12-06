@@ -40,6 +40,9 @@ Route::middleware(['auth', 'verified'])
         Route::get('/diary/create', [DiaryController::class, 'create'])->name('diary.create');
         Route::post('/diary/store', [DiaryController::class, 'store'])->name('diary.store');
         Route::get('/diary/{id}', [DiaryController::class, 'show'])->name('diary.show');
+        Route::delete('/diary/{id}', [DiaryController::class,'destroy'])->name('diary.destroy');
+        // Route::get('/diary/edit', [DiaryController::class, 'edit'])->name('diary.edit');
+
 
         // Analysis
         Route::prefix('analysis')->name('analysis.')->group(function () {
